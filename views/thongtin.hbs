@@ -1,0 +1,225 @@
+<div class="row" style="width: 100%;  ">
+    <div class="container" style="background-color: aqua;  margin-left: 400px; ">
+
+        <form action="/thongtin/add" method="POST" autocomplete="off"
+            style="width: 1000px; margin-left: auto; margin-right: auto;">
+            <div>
+                <h1 style="color: rgb(6, 112, 243);">{{viewTitle}}</h1>
+            </div>
+            <div>
+                <h1 style="color: rgb(211, 8, 8);">{{viewTitle1}}</h1>
+            </div>
+
+            <input type="hidden" name="id" value="{{user._id}}">
+            <div class="row" style="margin: 5px; margin-top: 10px;">
+                <div class="form-group col-sm-6">
+                    <label for=""> Mã sinh viên</label>
+                    <input type="text" name="Masv" value="{{user.Masv}}" class="form-control"
+                        placeholder="Mã sinh viên">
+                </div>
+            </div>
+            <div class="row" style="margin: 10px;">
+                <div class="form-group col-sm-6">
+                    <label for=""> Tên sinh viên</label>
+                    <input type="text" name="Tensv" value="{{user.Tensv}}" class="form-control"
+                        placeholder="Tên sinh viên">
+                </div>
+            </div>
+
+            <div class="row" style="margin: 10px;">
+                <div class="form-group col-sm-6">
+                    <label for=""> Điểm </label>
+                    <input type="text" name="Diem" value="{{user.Diem}}" class="form-control" placeholder="Điểm">
+                </div>
+            </div>
+            <div class="row" style="margin: 10px;">
+                <div class="form-group col-sm-6">
+                    <label for=""> Sdt </label>
+                    <input type="text" name="Sdt" value="{{user.Sdt}}" class="form-control" placeholder="Số điện thoại">
+                </div>
+            </div>
+
+            <div class="row" style="margin: 5px;">
+                <div class="form-group col-sm-12">
+                    <button type="submit" class="btn btn-primary" style="font-size: 16px;">Lưu</button>
+                    <a href="/thongtin/listdulieu" class="btn btn-primary">Danh sách</a>
+
+                </div>
+            </div>
+            <div style="float: right;">
+                <label for="image">Chọn ảnh để tải lên:</label>
+                <input type="file" id="image" name="Anh" value="{{user.Anh}}">
+                <img id="preview" src="" alt="Ảnh xem trước">
+            </div>
+
+        </form>
+        
+
+        <script>
+            const input = document.querySelector('input[type="file"]');
+            const preview = document.querySelector('#preview');
+
+            input.addEventListener('change', function () {
+                const file = this.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.addEventListener('load', function () {
+                        preview.src = reader.result;
+                    });
+
+                    reader.readAsDataURL(file);
+                }
+            });
+        </script>
+    </div>
+</div>
+<!-- banner section end -->
+<!-- service section start -->
+<div class="service_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="service_taital">Quick Searches</h1>
+            </div>
+        </div>
+        <div class="service_section_2">
+            <div class="row">
+                <div class="col">
+                    <div class="service_box">
+                        <div class="breakfast_img"><img src="breakfast-img.png"></div>
+                    </div>
+                    <h4 class="breakfast_text">CP123</h4>
+                    <div class="seemore_bt"><a href="#">See More</a></div>
+                </div>
+                <div class="col">
+                    <div class="service_box">
+                        <div class="breakfast_img"><img src="delivery-img.png"></div>
+                    </div>
+                    <h4 class="breakfast_text">CP012</h4>
+                    <div class="seemore_bt"><a href="#">See More</a></div>
+                </div>
+                <div class="col">
+                    <div class="service_box">
+                        <div class="breakfast_img"><img src="dinner-img.png"></div>
+                    </div>
+                    <h4 class="breakfast_text">CP321</h4>
+                    <div class="seemore_bt"><a href="#">See More</a></div>
+                </div>
+                <div class="col">
+                    <div class="service_box">
+                        <div class="breakfast_img"><img src="coffee-img.png"></div>
+                    </div>
+                    <h4 class="breakfast_text">CP914</h4>
+                    <div class="seemore_bt"><a href="#">See More</a></div>
+                </div>
+                <div class="col">
+                    <div class="service_box">
+                        <div class="breakfast_img"><img src="alcohol-img.png"></div>
+                    </div>
+                    <h4 class="breakfast_text">CP202</h4>
+                    <div class="seemore_bt"><a href="#">See More</a></div>
+                </div>
+                <div class="col">
+                    <div class="service_box">
+                        <div class="breakfast_img"><img src="diningtable-img.png"></div>
+                    </div>
+                    <h4 class="breakfast_text">CP2003</h4>
+                    <div class="seemore_bt"><a href="#">See More</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- service section end -->
+<!-- footer section start -->
+<div class="footer_section">
+    <div class="container">
+        <div class="footer_sectio_2">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="footer_logo">Quản Lý Sinh Viên</h2>
+                    <p class="footer_text">t is a long established fact that a reader will be distracted by the readable
+                        content of a page when looking at its layout. The point of </p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="useful_text">Navigation</h2>
+                    <div class="footer_menu">
+                        <ul>
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="location.html">Location</a></li>
+                            <li><a href="service.html">Services</a></li>
+                            <li><a href="features.html">Features</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="useful_text">Contact Info</h2>
+                    <p class="address_text">Office Address</p>
+                    <div class="map_icon"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i><span
+                                class="padding_left15">Loram ipusm New York, NY 36524</span></a></div>
+                    <p class="address_text">Customer Service:</p>
+                    <div class="map_icon"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span
+                                class="padding_left15">( +01 1234567890 )</span></a></div>
+                    <div class="map_icon"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i><span
+                                class="padding_left15">demo@gmail.com</span></a></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h2 class="useful_text">Discover</h2>
+                    <div class="subscribe_menu">
+                        <ul>
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">How It Works</a></li>
+                            <li><a href="#">subscribe</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="social_icon">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer section end -->
+</div>
+</div>
+<!-- layout main section end -->
+<!-- copyright section start -->
+<div class="copyright_section">
+    <div class="container">
+        <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free html
+                Templates</a></p>
+    </div>
+</div>
+<!-- copyright section end -->
+<!-- Javascript files-->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/plugin.js"></script>
+<!-- sidebar -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+<!-- javascript -->
+<script src="js/owl.carousel.js"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
